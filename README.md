@@ -1,0 +1,2 @@
+# SCPBDD
+ Projet de la matière Administration et base de données, dont l'objectid est de créer un projet dans lequel nous créons une base de données. Pour ce projet, j'ai choisis de créer un projet Laravel avec Laragon. L'objectif du projet est d'afficher des bases de donneés dans lequel nous pouvons voir des SCP, leur classe, le site dans lequel ils se trouvent ainsi que les employés des différents sites. 
