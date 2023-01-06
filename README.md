@@ -14,11 +14,9 @@
 
  Pour ce projet, nous avons choisis de créer un projet Laravel avec Laragon. L'objectif du projet est d'afficher des bases de donneés dans lequel nous pouvons voir des SCP, leur classe, le site dans lequel ils se trouvent ainsi que les employés des différents sites. 
 
-## 1) Installation de Blueprint Laravel
+1) Installation de Blueprint Laravel
 
 Afin de créer automatiquement le différentes tables, les migrations, ainsi que les seeders, nous avons choisis d'installer Blueprint Laravel. Ce dernier est un outil nous permettant de générer tous les fichiers nécessaires au fonctionnement de la base de données grâce à un fichier `draft.yaml`.
-
-### Installation de Blueprint Laravel 
 
 Nous utilisons `composer` pour installer Blueprint. 
 
@@ -29,4 +27,22 @@ Blueprint suggère également d'installer le package `Laravel Test Assertions`, 
 
 ```bash
 composer require --dev jasonmccreary/laravel-test-assertions
+```
+
+2) Ecriture du fichier Draft.yaml
+
+L'intérêt de `Blueprint laravel` est de pouvoir intégrer un fichier `Draft.yaml` au répertoire `root` du projet.
+
+Dans ce dernier, nous avons plusieurs informations à renseigner : 
+- Les models
+- Les controllers
+
+Voici comme exemple le modèle de la table `site` :
+```yaml
+models:
+   Site:
+      name: varchar(55)
+      latitude: decimal(2,9)
+      longitude: decimal(2,9)
+      adress: varchar(55)
 ```
