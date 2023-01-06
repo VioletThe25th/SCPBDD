@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('scp', App\Http\Controllers\ScpController::class);
+
+Route::resource('classe', App\Http\Controllers\ClasseController::class);
+
+Route::resource('site', App\Http\Controllers\SiteController::class);
+
+Route::resource('employee', App\Http\Controllers\EmployeeController::class);

@@ -1,2 +1,57 @@
+created:
+    - app/Http/Controllers/ScpController.php
+    - app/Http/Controllers/ClasseController.php
+    - app/Http/Controllers/SiteController.php
+    - app/Http/Controllers/EmployeeController.php
+    - database/factories/ScpFactory.php
+    - database/factories/ClasseFactory.php
+    - database/factories/SiteFactory.php
+    - database/factories/EmployeeFactory.php
+    - database/migrations/2023_01_06_144047_create_scps_table.php
+    - database/migrations/2023_01_06_144048_create_classes_table.php
+    - database/migrations/2023_01_06_144049_create_sites_table.php
+    - database/migrations/2023_01_06_144050_create_employees_table.php
+    - app/Models/Scp.php
+    - app/Models/Classe.php
+    - app/Models/Site.php
+    - app/Models/Employee.php
+    - database/seeders/ScpSeeder.php
+    - database/seeders/ClasseSeeder.php
+    - database/seeders/SiteSeeder.php
+    - database/seeders/EmployeeSeeder.php
+    - tests/Feature/Http/Controllers/ScpControllerTest.php
+    - tests/Feature/Http/Controllers/ClasseControllerTest.php
+    - tests/Feature/Http/Controllers/SiteControllerTest.php
+    - tests/Feature/Http/Controllers/EmployeeControllerTest.php
+    - app/Http/Requests/ScpStoreRequest.php
+    - app/Http/Requests/ScpUpdateRequest.php
+    - app/Http/Requests/ClasseStoreRequest.php
+    - app/Http/Requests/ClasseUpdateRequest.php
+    - app/Http/Requests/SiteStoreRequest.php
+    - app/Http/Requests/SiteUpdateRequest.php
+    - app/Http/Requests/EmployeeStoreRequest.php
+    - app/Http/Requests/EmployeeUpdateRequest.php
+    - resources/views/scp/index.blade.php
+    - resources/views/scp/create.blade.php
+    - resources/views/scp/show.blade.php
+    - resources/views/scp/edit.blade.php
+    - resources/views/classe/index.blade.php
+    - resources/views/classe/create.blade.php
+    - resources/views/classe/show.blade.php
+    - resources/views/classe/edit.blade.php
+    - resources/views/site/index.blade.php
+    - resources/views/site/create.blade.php
+    - resources/views/site/show.blade.php
+    - resources/views/site/edit.blade.php
+    - resources/views/employee/index.blade.php
+    - resources/views/employee/create.blade.php
+    - resources/views/employee/show.blade.php
+    - resources/views/employee/edit.blade.php
+updated:
+    - routes/web.php
 models:
     User: {  }
+    Scp: { name: 'string:55', description: text }
+    Classe: { name: 'string:55', relationships: { hasMany: Scp } }
+    Site: { name: 'string:55', latitude: decimal, longitude: decimal, address: 'string:155', relationships: { hasMany: 'Scp, Employee' } }
+    Employee: { name: 'string:55', mail: 'string:155', tel: 'string:20' }
