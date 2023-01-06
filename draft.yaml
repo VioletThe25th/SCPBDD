@@ -1,0 +1,115 @@
+models:
+  Scp:
+    name: string:55
+    description: text
+    
+  Classe:
+    name: string:55
+    relationships:
+      hasMany: Scp
+  Site:
+    name: string:55
+    latitude: decimal:2,9
+    longitude: decimal:2,9
+    address: string:155
+    relationships:
+      hasMany: Scp, Employee
+  Employee:
+    name: string:55
+    mail: string:155
+    tel: string:20
+controllers:
+  Scp:
+    index:
+      query: all:scps
+      render: scp.index with:scps
+    create:
+      render: scp.create
+    store:
+      validate: scp
+      save: scp
+      flash: scp.id
+      redirect: scp.index
+    show:
+      render: scp.show with:scp
+    edit:
+      render: scp.edit with:scp
+    update:
+      validate: scp
+      update: scp
+      flash: scp.id
+      redirect: scp.index
+    destroy:
+      delete: scp
+      redirect: scp.index
+  Classe:
+    index:
+      query: all:classes
+      render: classe.index with:classes
+    create:
+      render: classe.create
+    store:
+      validate: classe
+      save: classe
+      flash: classe.id
+      redirect: classe.index
+    show:
+      render: classe.show with:classe
+    edit:
+      render: classe.edit with:classe
+    update:
+      validate: classe
+      update: classe
+      flash: classe.id
+      redirect: classe.index
+    destroy:
+      delete: classe
+      redirect: classe.index
+  Site:
+    index:
+      query: all:sites
+      render: site.index with:sites
+    create:
+      render: site.create
+    store:
+      validate: site
+      save: site
+      flash: site.id
+      redirect: site.index
+    show:
+      render: site.show with:site
+    edit:
+      render: site.edit with:site
+    update:
+      validate: site
+      update: site
+      flash: site.id
+      redirect: site.index
+    destroy:
+      delete: site
+      redirect: site.index
+  Employee:
+    index:
+      query: all:employees
+      render: employee.index with:employees
+    create:
+      render: employee.create
+    store:
+      validate: employee
+      save: employee
+      flash: employee.id
+      redirect: employee.index
+    show:
+      render: employee.show with:employee
+    edit:
+      render: employee.edit with:employee
+    update:
+      validate: employee
+      update: employee
+      flash: employee.id
+      redirect: employee.index
+    destroy:
+      delete: employee
+      redirect: employee.index
+seeders: Scp, Classe, Site, Employee
+
